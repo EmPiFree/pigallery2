@@ -5,15 +5,17 @@ services:
     container_name: pigallery2
     environment:
       - NODE_ENV=production # set to 'debug' for full debug logging
-      # - NODE_OPTIONS=--enable-source-maps # enable source map support on the backend  for development
+      # - NODE_OPTIONS=--enable-source-maps # enable source map support on the backend for development
     volumes:
-      - "./pigallery2/config:/app/data/config" # CHANGE ME
-      - "db-data:/app/data/db"
-      - "./pigallery2/images:/app/data/images:ro" # CHANGE ME, ':ro' means read-only
-      - "./pigallery2/tmp:/app/data/tmp" # CHANGE ME
+      - /docker/stacks/pigallery2/config:/app/data/config
+      - /docker/stacks/pigallery2/db-data:/app/data/db
+      - /docker/stacks/pigallery2/images/gallery:/app/data/images:ro
+      - /docker/stacks/pigallery2/tmp:/app/data/tmp
     ports:
-      - 127.0.0.1:3456:80
+      - "127.0.0.1:3456:80"
     restart: always
-
-volumes:
-  db-data:
+     
+networks:
+  default:
+    external: true
+    name: bart
