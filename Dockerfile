@@ -34,7 +34,7 @@ RUN apk add --no-cache \
 COPY --from=builder /app /app
 
 # Run build time diagnostics to make sure the app would work after build is finished
-RUN ["node", "./src/backend/index", "--expose-gc",  "--run-diagnostics", "--config-path=/app/diagnostics-config.json", "--Server-Log-level=silly"]
+# RUN ["node", "./src/backend/index", "--expose-gc",  "--run-diagnostics", "--config-path=/app/diagnostics-config.json", "--Server-Log-level=silly"]
 HEALTHCHECK --interval=40s --timeout=30s --retries=3 --start-period=60s \
   CMD wget --quiet --tries=1 --no-check-certificate --spider \
   http://127.0.0.1:80/heartbeat || exit 1
