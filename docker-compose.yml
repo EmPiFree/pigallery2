@@ -12,7 +12,7 @@ services:
       - "./pigallery2/images:/app/data/images:ro" # CHANGE ME, ':ro' means read-only
       - "./pigallery2/tmp:/app/data/tmp" # CHANGE ME
     ports:
-      - 80:80
+      - 127.0.0.1:3456:80
     restart: always
 
 volumes:

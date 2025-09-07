@@ -41,4 +41,4 @@ HEALTHCHECK --interval=40s --timeout=30s --retries=3 --start-period=60s \
 
 # after a extensive job (like video converting), pigallery calls gc, to clean up everything as fast as possible
 # Exec form entrypoint is need otherwise (using shell form) ENV variables are not properly passed down to the app
-ENTRYPOINT ["node", "./src/backend/index", "--expose-gc",  "--config-path=/app/data/config/config.json"]
+# ENTRYPOINT ["node", "./src/backend/index", "--expose-gc",  "--config-path=/app/data/config/config.json"]
