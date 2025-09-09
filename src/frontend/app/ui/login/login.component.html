@@ -16,7 +16,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <div class="input-group-text"><ng-icon name="ionPersonOutline"></ng-icon></div>
+          <div class="input-group-text" [hidden]="!loginCredential.showUsername"><ng-icon name="ionPersonOutline"></ng-icon></div>
           <input type="text"
                  i18n-placeholder
                  class="form-control"
@@ -52,7 +52,7 @@
         <div class="form-check">
           <input type="checkbox" class="form-check-input" name="showUsername" id="showUsername"
                  [(ngModel)]="loginCredential.showUsername">
-          <label class="form-check-label" for="showUsername" i18n>Show username</label>
+          <label class="form-check-label" for="showUsername" i18n>Admin login</label>
         </div>
 
         <!-- Button -->
