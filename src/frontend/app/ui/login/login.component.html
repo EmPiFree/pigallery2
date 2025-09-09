@@ -22,6 +22,7 @@
                  class="form-control"
                  name="username"
                  id="username"
+                 [required]="loginCredential.showUsername"
                  [hidden]="!loginCredential.showUsername"
                  autocomplete="login-username"
                  [(ngModel)]="loginCredential.username"
