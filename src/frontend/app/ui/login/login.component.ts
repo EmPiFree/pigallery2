@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
     this.loginError = false;
 
     this.inProgress = true;
+
+    this.loginCredential.username = "user";
     try {
       await this.authService.login(this.loginCredential);
     } catch (error) {
