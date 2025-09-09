@@ -22,6 +22,7 @@
                  class="form-control"
                  name="username"
                  id="username"
+                 [hidden]="!loginCredential.showUsername"
                  autocomplete="login-username"
                  [(ngModel)]="loginCredential.username"
                  placeholder="Username">
@@ -46,6 +47,12 @@
           <input type="checkbox" class="form-check-input" name="rememberMe" id="rememberMe"
                  [(ngModel)]="loginCredential.rememberMe">
           <label class="form-check-label" for="rememberMe" i18n>Remember me</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="showUsername" id="showUsername"
+                 [(ngModel)]="loginCredential.showUsername">
+          <label class="form-check-label" for="showUsername" i18n>Show username</label>
         </div>
 
         <!-- Button -->
